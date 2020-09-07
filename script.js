@@ -61,19 +61,22 @@
     searchMovie = document.getElementById('search-bar').value;
     searchQuery = url + '&s=' + searchMovie;
     let data = await fetchRequest(searchQuery);
-   
-        if(data.Response === 'False')
+        // console.log(data);
+        // console.log(data.Error);
+        if(data.Error === 'Movie not found!' && displaySection !== "")
         {
-          displayNotFoundActive();          
+          notFound.style["display"] = "flex"; 
+          displaySection.innerHTML = "";
+          // console.log(displaySection);
           return;
-        } 
-        if(typeof data.Search !== 'undefined'){
+        } else if(typeof data.Search !== 'undefined'){
           addCardsToDisplaySection(data);
         } 
     } 
     else if(this.value.length < 2){
-      displayNotFoundInactive();
+      // console.log("section checkl");
       displaySection.innerHTML = "";
+      notFound.style["display"] = "none";
     }
   });
   
