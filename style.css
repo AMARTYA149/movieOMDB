@@ -95,7 +95,7 @@ img{
   font-size: 1.25rem;
 }
 
-.hero_name a{
+.movie_name a{
   font-size: 1.25rem;
   text-decoration: none;
 }
@@ -104,7 +104,7 @@ img{
   cursor: pointer;
 }
 
-.heroFeatures{
+.movieFeatures{
   background: red;
   width: 80%;
   /* height: 5%; */
