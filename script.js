@@ -13,7 +13,7 @@
     </div>
     <div class="intro">
       <div class="movie_name">
-      <a href="#">${name}</a>  
+      <a href="movie.html?id=${id}">${name}</a>  
       </div>
       <div class="heart">
         <i class="far fa-heart" data-id = "${id}"></i>
@@ -70,6 +70,8 @@
           // console.log(displaySection);
           return;
         } else if(typeof data.Search !== 'undefined'){
+          displaySection.innerHTML = "";
+          notFound.style["display"] = "none";
           addCardsToDisplaySection(data);
         } 
     } 
