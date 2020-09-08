@@ -1,12 +1,15 @@
 
 const movieContainer = document.querySelector('#movie_container');
 
-//fetching individual movie through id
+
+// getting from url
 function getQueryParameter(param){
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
 
+
+//fetching individual movie through id
 async function fetchMovie(id){
   // console.log("Amar");
   let searchQuery = url + '&i=' + id;
@@ -16,8 +19,7 @@ async function fetchMovie(id){
   return data;
 }
 
-
-
+// making movie display
 function makeMovieCard(movie){
 
     let image = movie.Poster;
@@ -66,10 +68,7 @@ function makeMovieCard(movie){
       </div>
     </div>
     `
-    movieContainer.appendChild(card);
 }
-
-
 
 async function start(){
   const movieId = getQueryParameter('id');

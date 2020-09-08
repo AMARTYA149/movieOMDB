@@ -1,6 +1,8 @@
   const displaySection = document.getElementById('display_section');
   const notFound = document.getElementById('notfound');
   
+
+  // making movie cards
   function makeCards(image, name, id){
     var card = document.createElement("div");
     card.setAttribute("class", "char_card");
@@ -24,7 +26,7 @@
   // console.log(card);
   }
   
-  
+  // adding movie card to display section
   function addCardsToDisplaySection(data){
     displaySection.innerHTML = "";
 
@@ -37,6 +39,7 @@
   }
   
   
+  // fetching movies
   async function fetchRequest(url){
     // console.log("Amar");
     const response = await fetch(url).catch(error => console.log(error) );
@@ -45,15 +48,18 @@
     return data;
   }
   
+
+  //handling found/not found
   function displayNotFoundActive(){
     // console.log('called');
     notFound.style["display"] = "flex";
   }
-
   function displayNotFoundInactive(){
     notFound.style["display"] = "none";
   }
   
+
+  // searching and passing movie data to fetch request
   document.getElementById('search-bar').addEventListener('keyup',async function(e){
     var data;
     if(this.value.length >= 3 || e.keyCode == 13){
