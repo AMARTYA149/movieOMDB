@@ -13,6 +13,10 @@ body{
 }
 
 
+#favourites{
+  cursor: pointer;
+} 
+
 
 #header{
   width: 100%;
